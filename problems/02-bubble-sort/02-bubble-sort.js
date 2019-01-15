@@ -10,6 +10,7 @@ function swap(arr,i,j){
     arr[j] = temp;
 }
 
+//done with do-while to avoid unnecessary swapping
 function bubbleSort(numArray) {
     let len = numArray.length;
     let swapped;
