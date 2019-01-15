@@ -12,11 +12,11 @@ function swap(arr,i,j){
 
 //done with do-while to avoid unnecessary swapping
 function bubbleSort(numArray) {
-    let len = numArray.length;
+    let len;
     let swapped;
     do {
         swapped = false;
-        for(let i=0;i<len;i++){
+        for(let i=0, len = numArray.length; i<len; i++){
             if(numArray[i]>numArray[i+1]){
                 swap(numArray,i,i+1);
                 swapped = true;
