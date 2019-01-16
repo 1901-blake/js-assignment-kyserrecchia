@@ -74,18 +74,40 @@ function triangleFunc(height, character){
     }
 }
 //test case for triangleFunc
-printShape("Triangle", 3, "$");
+// printShape("Triangle", 3, "$");
 
 function diamondFunc(height, character){
-    // let str = "";
-    // let offset = Math.floor(height/2);
-    // //set offset for that line
-    // for(let i=0; i<offset; i++){
+    let str = "";
+    let spaceStr = "";
+    let charStr = "";
+    let bottomHalfStringArr = [];
+    let offset = Math.floor(height/2);
 
-    //     for(let j=0; j<i; j++){
-    //         str += character;
-    //     }
-    //     console.log(str);
-    //     str = "";
-    // }
+    for(let i=0; i<=Math.floor(height/2); i++){
+        for(let j=0; j<offset; j++){
+            spaceStr += " ";
+           
+        }
+        str += spaceStr;
+        for(let k=0; k<(2*i + 1); k++){
+            charStr += character;
+        }
+        str += charStr;
+        console.log(str);
+        //clear strings
+        spaceStr = "";
+        charStr = "";
+        bottomHalfStringArr.push(str);
+        str = "";
+        //fix offset
+        offset--;
+    }
+    bottomHalfStringArr.pop();
+    let len = bottomHalfStringArr.length;
+    for(let i=0; i<len; i++){
+        console.log(bottomHalfStringArr.pop());
+    }
+    
 }
+
+printShape("Diamond", 7, "*");
