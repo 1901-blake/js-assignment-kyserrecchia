@@ -20,6 +20,72 @@ Example for printShape("Diamond", 5, "*");
  ***
   * 
 */
+
 function printShape(shape, height, character) {
-  
+    shape = shape.toLowerCase();
+
+    switch(shape){
+        case 'square':
+            squareFunc(height, character);
+            break;
+
+        case 'triangle':
+            triangleFunc(height, character);
+            break;
+
+        case 'diamond':
+            diamondFunc(height, character);
+            break;
+    }
+}
+
+function squareFunc(height, character){
+    let str = "";
+    //make string
+    for(let i=0; i<height; i++){
+        str += character;
+    }
+    //print it height number of times
+    for(let i=0; i<height; i++){
+        console.log(str);
+    }
+}
+
+//test case for squareFunc
+// printShape("Square", 3, "%");
+
+//two for-loop version here, probably less efficient
+// function triangleFunc(height, character){
+//     let str = "";
+//     for(let i=1; i<height+1; i++){
+//         for(let j=0; j<i; j++){
+//             str += character;
+//         }
+//         console.log(str);
+//         str = "";
+//     }
+// }
+
+function triangleFunc(height, character){
+    let str = "";
+    for(let i=0; i<height; i++){
+        str += character;
+        console.log(str);
+    }
+}
+//test case for triangleFunc
+printShape("Triangle", 3, "$");
+
+function diamondFunc(height, character){
+    // let str = "";
+    // let offset = Math.floor(height/2);
+    // //set offset for that line
+    // for(let i=0; i<offset; i++){
+
+    //     for(let j=0; j<i; j++){
+    //         str += character;
+    //     }
+    //     console.log(str);
+    //     str = "";
+    // }
 }
